@@ -2,7 +2,10 @@
 
 Steps to START Application
 
+## Node Modues
 > npm install
+
+## To Start app
 > ng serve or ng start
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 14.2.3.
