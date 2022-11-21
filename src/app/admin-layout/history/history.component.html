@@ -1,0 +1,32 @@
+<h2>History</h2>
+<div class="table-responsive">
+  <div class="container">
+    <div class="row">
+      <div class="search-hero">
+        <input class="form-control" type="text" name="search" [(ngModel)]="searchText" autocomplete="off"
+          placeholder="Start searching for a github user by UserName">
+      </div>
+      <table class="table table-striped table-sm">
+        <thead>
+          <tr>
+            <th scope="col">UserName</th>
+            <th scope="col">Name</th>
+            <th scope="col">Location</th>
+            <th scope="col">Sucessful</th>
+            <th scope="col">Action</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr *ngFor="let history of histories | filter:searchText;let i = index; ">
+            <td>{{history.username}}</td>
+            <td>{{history.name}}</td>
+            <td>{{history.location}}</td>
+            <td *ngIf="history.isfound == true">Yes</td>
+            <td *ngIf="history.isfound == false">No</td>  
+            <td><button class="danger" (click)="deleteHistory(i)">Delete History</button></td>       
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</div>
